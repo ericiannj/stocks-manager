@@ -1,22 +1,10 @@
 import React, { useState } from 'react'
-import {
-    QuotesServices,
-    CompanyServices,
-    HistoryServices,
-} from '../../services'
-import SideBar from '../../components/SideBar'
-import ProfileSelector from '../../components/ProfileSelector'
-
+import { QuotesServices, CompanyServices, HistoryServices } from '@/services'
 import { GlobalContainer, DashboardContainer, ProfileContainer } from './styled'
-import PageHeader from '../../components/PageHeader'
-import DashboardPanel from '../../features/dashboard/components/DashboardPanel'
-import InputDash from '../../features/dashboard/components/inputDash'
-import SectionHeader from '../../components/SectionHeader'
-import StockCard from '../../components/StockCard'
-
-import DashIcon from '../../assets/icons/dash-icon.png'
-import StatsIcon from '../../assets/icons/stats-icon.png'
-import FullStarIcon from '../../assets/icons/star-full-icon.png'
+import { SideBar, ProfileSelector } from '@/components'
+import { DashboardStructure } from '@/features/dashboard/components'
+import { RecentStructure } from '@/features/recent/components'
+import { FavoritesStructure } from '@/features/favorites/components'
 
 const Home: React.FC = () => {
     const [useStockInfo, setStockInfo] = useState()
@@ -43,15 +31,12 @@ const Home: React.FC = () => {
         <GlobalContainer>
             <SideBar />
             <DashboardContainer>
-                <PageHeader title="Dashboard" icon={DashIcon} />
-                <InputDash />
-                <DashboardPanel />
-                <SectionHeader title="Empresas recentes" icon={StatsIcon} />
-                <StockCard title="FB" text="facebook" data="3,2%" />
+                <DashboardStructure />
+                <RecentStructure />
             </DashboardContainer>
             <ProfileContainer>
                 <ProfileSelector />
-                <SectionHeader title="Empresas favoritas" icon={FullStarIcon} />
+                <FavoritesStructure />
             </ProfileContainer>
         </GlobalContainer>
     )

@@ -8,8 +8,7 @@ import {
     StockCardDataContainer,
     StockCardData,
 } from './styled'
-
-import StockIcon from '../../assets/icons/stock-icon.png'
+import StockIcon from '@/assets/icons/stock-icon.png'
 
 type IStockCardProps = {
     title: string

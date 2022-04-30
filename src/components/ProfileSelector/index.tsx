@@ -1,6 +1,5 @@
 import React from 'react'
 import { ProfileSelect, ProfileAvatar, ProfileDiv } from './styled'
-
 import ProfileIcon from '../../assets/icons/profile-icon.png'
 
 const ProfileSelector: React.FC = () => {

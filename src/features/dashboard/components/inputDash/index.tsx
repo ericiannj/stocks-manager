@@ -1,9 +1,8 @@
 import React from 'react'
 import { InputDiv, InputStock, SearchButton, SearchButtonImage } from './styled'
+import SearchIcon from '@/assets/icons/search-icon.png'
 
-import SearchIcon from '../../../../assets/icons/search-icon.png'
-
-const inputDash: React.FC = () => {
+const InputDash: React.FC = () => {
     return (
         <>
             <InputDiv>
@@ -16,4 +15,4 @@ const inputDash: React.FC = () => {
     )
 }
 
-export default inputDash
+export default InputDash
