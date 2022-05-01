@@ -1,5 +1,10 @@
 import React from 'react'
-import { InputDiv, InputStock, SearchButton, SearchButtonImage } from './styled'
+import {
+    InputDiv,
+    InputStock,
+    SearchButton,
+    SearchButtonImage,
+} from '@/features/dashboard/components/inputDash/styled'
 import SearchIcon from '@/assets/icons/search-icon.png'
 
 const InputDash: React.FC = () => {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import colors from '../../styles/colors'
+import colors from '@/styles/colors'
 
 export const ProfileDiv = styled.div`
     position: relative;
@@ -18,6 +18,7 @@ export const ProfileSelect = styled.select`
     padding-left: 40px;
     box-sizing: border-box;
     border-radius: 120px;
+    -webkit-appearance: none;
 
     option {
         color: ${colors.primary};
@@ -35,4 +36,15 @@ export const ProfileAvatar = styled.img`
     border-radius: 120px;
     position: absolute;
     left: 0px;
+`
+
+export const ProfileIconContainer = styled.div`
+    position: absolute;
+    top: 6px;
+    right: 15px;
+`
+
+export const ProfileArrowIcon = styled.img`
+    height: 6px;
+    width: 12px;
 `

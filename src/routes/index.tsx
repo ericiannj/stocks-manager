@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes as SwitchRoutes, Route } from 'react-router-dom'
 
-import Home from '../pages/Home'
+import Home from '@/pages/Home'
 
 const Routes: React.FC = () => {
     return (
