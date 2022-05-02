@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { QuotesServices, CompanyServices, HistoryServices } from '@/services'
+import React /* , { useState }  */ from 'react'
+/* import { QuotesServices, CompanyServices, HistoryServices } from '@/services' */
 import { GlobalContainer, DashboardContainer, ProfileContainer } from './styled'
 import { SideBar, ProfileSelector } from '@/components'
 import { DashboardStructure } from '@/features/dashboard/components'
@@ -7,11 +7,11 @@ import { RecentStructure } from '@/features/recent/components'
 import { FavoritesStructure } from '@/features/favorites/components'
 
 const Home: React.FC = () => {
-    const [useStockInfo, setStockInfo] = useState()
+    /* const [useStockInfo, setStockInfo] = useState()
     const [useCompanyInfo, setCompanyInfo] = useState()
-    const [useHistoryInfo, setHistoryInfo] = useState()
+    const [useHistoryInfo, setHistoryInfo] = useState() */
 
-    React.useEffect(() => {
+    /* React.useEffect(() => {
         QuotesServices.getQuotes('BAC')
             .then(data => setStockInfo(data))
             .catch(e => console.log(e))
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         console.log(useStockInfo)
         console.log(useCompanyInfo)
         console.log(useHistoryInfo)
-    }, [])
+    }, []) */
 
     return (
         <GlobalContainer>

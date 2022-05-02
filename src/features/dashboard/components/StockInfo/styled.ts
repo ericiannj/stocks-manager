@@ -1,16 +1,4 @@
 import styled from 'styled-components'
-import colors from '@/styles/colors'
-
-export const DashboardPanelContainer = styled.div`
-    height: 380px;
-    width: 748px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: ${colors.white};
-    border-radius: 8px;
-    margin-bottom: 42px;
-    padding: 25px 20px;
-`
 
 export const StockInfoContainer = styled.div`
     width: 100%;
@@ -43,4 +31,16 @@ export const StockDataContainer = styled.div`
 export const StockData = styled.p`
     font-size: 16px;
     font-weight: 700;
+`
+
+export const StarImage = styled.img`
+    height: 16px;
+    width: 16px;
+`
+
+export const FavoriteButton = styled.button`
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    vertical-align: super;
 `

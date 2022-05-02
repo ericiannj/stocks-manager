@@ -1,18 +1,18 @@
-import { call, put } from 'redux-saga/effects'
+import { call, put, all, takeLatest, StrictEffect } from 'redux-saga/effects'
 import api from '@/services/api'
-import { loadSuccess, loadFailure } from './actions'
-import { Stock } from './types'
-const apiKey = process.env.IEX_API_TOKEN
+import { loadSuccess, loadFailure, loadRequest } from './actions'
+import { Stock, StocksTypes } from './types'
+import { AxiosResponse } from 'axios'
+const apiKey = process.env.REACT_APP_IEX_API_TOKEN
 
-export type ResponseGenerator = {
-    data: Stock
-}
-
-export function* load(symbol: string) {
+type loadParams = ReturnType<typeof loadRequest>
+export function* load({
+    payload,
+}: loadParams): Generator<StrictEffect, any, AxiosResponse<Stock>> {
     try {
-        const response: ResponseGenerator = yield call(
+        const response = yield call(
             api.get,
-            `/stock/${symbol}/quote?token=${apiKey}`
+            `/stock/${payload.data.symbol}/quote?token=${apiKey}`
         )
 
         yield put(loadSuccess(response.data))
@@ -20,3 +20,5 @@ export function* load(symbol: string) {
         yield put(loadFailure())
     }
 }
+
+export default all([takeLatest(StocksTypes.LOAD_REQUEST, load)])

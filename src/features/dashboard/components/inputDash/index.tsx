@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     InputDiv,
     InputStock,
@@ -6,41 +6,37 @@ import {
     SearchButtonImage,
 } from '@/features/dashboard/components/inputDash/styled'
 import SearchIcon from '@/assets/icons/search-icon.png'
-import { connect } from 'react-redux'
+import { loadRequest } from '@/store/ducks/stocks/actions'
+import { useDispatch, useSelector } from 'react-redux'
 import { ApplicationState } from '@/store'
-import { Stock } from '@/store/ducks/stocks/types'
-import * as StocksActions from '@/store/ducks/stocks/actions'
-import { bindActionCreators, Dispatch } from 'redux'
 
-type StateProps = {
-    stock: Stock
-}
+const InputDash: React.FC = () => {
+    const [symbol, setSymbol] = useState('')
+    const dispatch = useDispatch()
+    const stock = useSelector((store: ApplicationState) => store.stocks.data)
 
-type DispatchProps = {
-    loadRequest(): void
-    loadSuccess(data: Stock): void
-}
+    console.log(stock)
 
-type Props = StateProps & DispatchProps
+    const searchStock = () => {
+        dispatch(loadRequest({ symbol }))
+    }
 
-const InputDash: React.FC<Props> = () => {
     return (
         <>
             <InputDiv>
-                <InputStock placeholder="Buscar empresa" />
-                <SearchButton>
+                <InputStock
+                    placeholder="Buscar empresa"
+                    onChange={e => setSymbol(e.target.value)}
+                />
+                <SearchButton onClick={searchStock}>
                     <SearchButtonImage src={SearchIcon} />
                 </SearchButton>
+                <div>
+                    <p>Companhia: {stock.companyName || ''}</p>
+                </div>
             </InputDiv>
         </>
     )
 }
 
-const mapStateToProps = (state: ApplicationState) => ({
-    stock: state.stock.data,
-})
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-    bindActionCreators(StocksActions, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(InputDash)
+export default InputDash
