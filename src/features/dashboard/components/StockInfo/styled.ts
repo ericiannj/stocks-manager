@@ -1,5 +1,24 @@
 import styled from 'styled-components'
 
+export const EmptyStockContainer = styled.div`
+    width: 75%;
+    margin: 50px auto;
+`
+
+export const EmptyStockTitle = styled.h1`
+    font-size: 30px;
+    text-align: center;
+`
+
+export const EmptyStockImageContainer = styled.div`
+    max-width: 80px;
+    margin: 30px auto;
+`
+
+export const EmptyStockImage = styled.img`
+    height: 80px;
+`
+
 export const StockInfoContainer = styled.div`
     width: 100%;
 `

@@ -11,9 +11,9 @@ import {
 import StockIcon from '@/assets/icons/stock-icon.png'
 
 type IStockCardProps = {
-    title: string
-    text: string
-    data: string
+    title?: string
+    text?: string
+    data?: string
 }
 
 const StockCard: React.FC<IStockCardProps> = ({ title, text, data }) => {

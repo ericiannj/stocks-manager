@@ -8,13 +8,18 @@ import {
 type ISectionHeaderProps = {
     title: string
     icon: string
+    style?: React.CSSProperties
 }
 
-const SectionHeader: React.FC<ISectionHeaderProps> = ({ title, icon }) => {
+const SectionHeader: React.FC<ISectionHeaderProps> = ({
+    title,
+    icon,
+    style,
+}) => {
     return (
         <>
             <SectionTitleContainer>
-                <SectionTitleIcon src={icon} />
+                <SectionTitleIcon src={icon} style={style} />
                 <SectionTitleText>{title}</SectionTitleText>
             </SectionTitleContainer>
         </>

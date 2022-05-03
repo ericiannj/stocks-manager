@@ -3,7 +3,7 @@ import colors from '@/styles/colors'
 
 export const SectionTitleContainer = styled.div`
     position: relative;
-    width: 100%;
+    max-width: 600px;
     margin-top: 27px;
     margin-bottom: 24px;
 `
