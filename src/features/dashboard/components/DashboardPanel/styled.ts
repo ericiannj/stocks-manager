@@ -10,6 +10,7 @@ export const DashboardPanelContainer = styled.div`
     border-radius: 8px;
     margin-bottom: 42px;
     padding: 25px 20px;
+    padding-bottom: 20px;
 `
 
 export const StockInfoContainer = styled.div`

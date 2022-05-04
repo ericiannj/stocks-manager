@@ -9,3 +9,7 @@ export const loadFailure = () => action(StocksTypes.LOAD_FAILURE)
 export const addRecent = (data: Stock) =>
     action(StocksTypes.ADD_RECENT, { data })
 export const deleteRecent = () => action(StocksTypes.DELETE_RECENT)
+export const addFavorite = (data: Stock) =>
+    action(StocksTypes.ADD_FAVORITE, { data })
+export const deleteFavorite = (data: Stock) =>
+    action(StocksTypes.DELETE_FAVORITE, { data })

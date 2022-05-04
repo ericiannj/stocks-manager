@@ -16,3 +16,7 @@ export const TrashImage = styled.img`
     height: 24px;
     width: 24px;
 `
+
+export const RecentStocksContainer = styled.div`
+    display: inline-flex;
+`

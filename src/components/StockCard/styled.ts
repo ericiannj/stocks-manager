@@ -4,9 +4,10 @@ export const StockCardContainer = styled.div`
     height: 73px;
     width: 299px;
     background-color: white;
-    padding: 12px 16px;
+    padding: 16px 16px;
     box-shadow: 0px 8px 20px -2px rgba(43, 37, 63, 0.1);
     border-radius: 8px;
+    margin-right: 21px;
 `
 
 export const StockCardTextContainer = styled.div`
@@ -25,6 +26,7 @@ export const StockCardImage = styled.img`
     height: 36px;
     width: 36px;
     border-radius: 100%;
+    vertical-align: sub;
 `
 
 export const StockCardSymbol = styled.h1`

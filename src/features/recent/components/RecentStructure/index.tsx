@@ -3,7 +3,12 @@ import { SectionHeader, StockCard } from '@/components'
 import StatsIcon from '@/assets/icons/stats-icon.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { ApplicationState } from '@/store'
-import { DeleteRecentButton, RecentHeaderContainer, TrashImage } from './styled'
+import {
+    DeleteRecentButton,
+    RecentHeaderContainer,
+    TrashImage,
+    RecentStocksContainer,
+} from './styled'
 import TrashIcon from '@/assets/icons/trash-icon.png'
 import { deleteRecent } from '@/store/ducks/stocks/actions'
 
@@ -28,13 +33,21 @@ const DashboardStructure: React.FC = () => {
                 )}
             </RecentHeaderContainer>
 
-            {recentStock.map(stock => (
-                <StockCard
-                    title={stock.symbol}
-                    text={stock.companyName}
-                    data="3,2%"
-                />
-            ))}
+            <RecentStocksContainer>
+                {recentStock.map((stock, index) => (
+                    <StockCard
+                        key={index}
+                        title={stock.symbol}
+                        text={
+                            stock.companyName !== undefined &&
+                            stock.companyName.length > 20
+                                ? stock.companyName.substring(0, 20) + '...'
+                                : stock.companyName
+                        }
+                        data="3,2%"
+                    />
+                ))}
+            </RecentStocksContainer>
         </>
     )
 }
