@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StockCardContainer = styled.div`
     height: 73px;
-    width: 299px;
+    min-width: 299px;
     background-color: white;
     padding: 16px 16px;
     box-shadow: 0px 8px 20px -2px rgba(43, 37, 63, 0.1);
@@ -13,6 +13,7 @@ export const StockCardContainer = styled.div`
 export const StockCardTextContainer = styled.div`
     display: inline-block;
     margin-left: 12px;
+    margin-bottom: 5px;
 `
 
 export const StockCardDataContainer = styled.div`

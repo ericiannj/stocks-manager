@@ -9,14 +9,20 @@ const StockChart: React.FC = () => {
         (store: ApplicationState) => store.stocks.dataHistory
     )
 
-    console.log(stockHistory)
+    console.log([stockHistory])
+
+    const FilteredHistory = stockHistory.filter(
+        (stock, index) => index % 30 === 0
+    )
+
+    console.log(FilteredHistory)
 
     return (
         <div className="stock-chart-container">
             <AreaChart
                 width={750}
                 height={280}
-                data={stockHistory}
+                data={FilteredHistory}
                 margin={{
                     top: 10,
                     right: 30,
@@ -25,14 +31,28 @@ const StockChart: React.FC = () => {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="minute" />
+                <defs>
+                    <linearGradient id="avarage" x1="0" y1="0" x2="0" y2="1">
+                        <stop
+                            offset="5%"
+                            stopColor="#0047BB"
+                            stopOpacity={0.8}
+                        />
+                        <stop
+                            offset="95%"
+                            stopColor="#0047BB"
+                            stopOpacity={0}
+                        />
+                    </linearGradient>
+                </defs>
+                <XAxis dataKey={'minute'} />
                 <YAxis />
                 <Tooltip />
                 <Area
                     type="monotone"
                     dataKey="marketAverage"
                     stroke="#0047BB"
-                    fill="#0047BB"
+                    fill="url(#avarage)"
                 />
             </AreaChart>
         </div>

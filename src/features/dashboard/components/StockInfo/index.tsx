@@ -78,7 +78,7 @@ const StockInfo: React.FC = () => {
                         <StockDataContainer>
                             <StockData>
                                 {stock.symbol !== undefined && '$'}{' '}
-                                {stock.latestPrice}
+                                {stock.latestPrice?.toFixed(2)}
                             </StockData>
                         </StockDataContainer>
                     </StockInfoContainer>

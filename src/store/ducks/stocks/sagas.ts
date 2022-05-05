@@ -38,7 +38,7 @@ export function* getHistory({
             `/stock/${payload}/chart/dynamic/20220504?token=${apiKey}`
         )
 
-        yield put(getStockHistory([response.data]))
+        yield put(getStockHistory(response.data))
     } catch (err) {
         yield put(loadFailure())
     }
