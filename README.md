@@ -38,7 +38,7 @@ git clone https://github.com/ericiannj/stocks-manager.git
 yarn
 ```
 
-3. Create the .env file and put the IEX token (REACT_APP_IEX_API_TOKEN={TOKEN})
+3. Create the .env file and put the IEX token.
 
 ```
 REACT_APP_IEX_API_TOKEN=__________________________
