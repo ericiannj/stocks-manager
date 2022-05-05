@@ -43,5 +43,4 @@ export const StockCardName = styled.p`
 
 export const StockCardData = styled.p`
     font-size: 16px;
-    color: green;
 `

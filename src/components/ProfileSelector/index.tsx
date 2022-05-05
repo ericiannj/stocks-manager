@@ -7,7 +7,6 @@ import {
     ProfileArrowIcon,
 } from './styled'
 import ProfileIcon from '@/assets/icons/profile-icon.png'
-import ProfileIcon2 from '@/assets/icons/profile-icon2.png'
 import ArrowIcon from '@/assets/icons/select-icon.png'
 
 const ProfileSelector: React.FC = () => {
@@ -21,11 +20,8 @@ const ProfileSelector: React.FC = () => {
             <ProfileDiv>
                 <ProfileSelect onChange={() => changeImage()}>
                     <option value="1">João da Silva Almeida Magalhães</option>
-                    <option value="2">Ana Paula da Silva Magalhães</option>
                 </ProfileSelect>
-                <ProfileAvatar
-                    src={stateImage == true ? ProfileIcon : ProfileIcon2}
-                />
+                <ProfileAvatar src={ProfileIcon} />
                 <ProfileIconContainer>
                     <ProfileArrowIcon src={ArrowIcon} />
                 </ProfileIconContainer>

@@ -19,4 +19,5 @@ export const TrashImage = styled.img`
 
 export const RecentStocksContainer = styled.div`
     display: inline-flex;
+    overflow: scroll;
 `

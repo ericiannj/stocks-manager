@@ -29,6 +29,10 @@ const StockInfo: React.FC = () => {
     const dispatch = useDispatch()
 
     const addToFavoritesStocks = () => {
+        if (stockFavorites.some(item => item.symbol === stock.symbol)) {
+            alert('Ação já favoritada')
+            return
+        }
         dispatch(addFavorite(stock))
     }
 

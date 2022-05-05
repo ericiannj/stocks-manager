@@ -22,6 +22,8 @@ const FavoritesStructure: React.FC = () => {
         dispatch(deleteFavorite(stock))
     }
 
+    console.log(favoritesStocks)
+
     return (
         <>
             <SectionHeader
@@ -39,11 +41,11 @@ const FavoritesStructure: React.FC = () => {
                         title={stock.symbol}
                         text={
                             stock.companyName !== undefined &&
-                            stock.companyName.length > 20
-                                ? stock.companyName.substring(0, 20) + '...'
+                            stock.companyName.length > 16
+                                ? stock.companyName.substring(0, 16) + '...'
                                 : stock.companyName
                         }
-                        data="3,2%"
+                        data={stock.changePercent?.toFixed(2) + '%'}
                     />
                     <DeleteFavoritesButton
                         onClick={() => deleteFavoriteStock(stock)}

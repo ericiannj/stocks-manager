@@ -7,6 +7,7 @@ const INITIAL_STATE: StocksState = {
     loading: false,
     recent: [],
     favorites: [],
+    dataHistory: [],
 }
 
 const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
@@ -21,7 +22,9 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 data: action.payload.data,
             }
         case StocksTypes.LOAD_FAILURE:
-            alert('Ação Inexistente.')
+            alert(
+                'Falha ao pesquisar ação. Verifique se a sigla está correta e se não há problemas de conexão.'
+            )
             return { ...state, loading: false, error: true, data: {} }
         case StocksTypes.ADD_RECENT:
             return { ...state, recent: [...state.recent, action.payload.data] }
@@ -33,13 +36,16 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 favorites: [...state.favorites, action.payload.data],
             }
         case StocksTypes.DELETE_FAVORITE:
-            console.log('delete')
-            console.log(action.payload)
             return {
                 ...state,
                 favorites: state.favorites.filter(
                     stock => stock.symbol !== action.payload.data.symbol
                 ),
+            }
+        case StocksTypes.GET_HISTORY:
+            return {
+                ...state,
+                dataHistory: action.payload,
             }
         default:
             return state

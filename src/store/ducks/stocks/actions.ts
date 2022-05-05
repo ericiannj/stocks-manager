@@ -1,5 +1,5 @@
 import { action } from 'typesafe-actions'
-import { StocksTypes, Stock } from './types'
+import { StocksTypes, Stock, StockHistory } from './types'
 
 export const loadRequest = (data: string) =>
     action(StocksTypes.LOAD_REQUEST, data)
@@ -13,3 +13,5 @@ export const addFavorite = (data: Stock) =>
     action(StocksTypes.ADD_FAVORITE, { data })
 export const deleteFavorite = (data: Stock) =>
     action(StocksTypes.DELETE_FAVORITE, { data })
+export const getStockHistory = (data: StockHistory[]) =>
+    action(StocksTypes.GET_HISTORY, data)

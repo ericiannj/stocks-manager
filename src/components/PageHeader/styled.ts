@@ -10,7 +10,7 @@ export const PageTitleText = styled.h1`
     font-size: 24px;
     color: ${colors.gray03};
     font-style: normal;
-    font-weight: bold;
+    font-weight: 900;
     letter-spacing: 0.15px;
     line-height: 28px;
     display: contents;
