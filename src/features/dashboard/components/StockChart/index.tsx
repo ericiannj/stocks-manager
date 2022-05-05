@@ -9,13 +9,9 @@ const StockChart: React.FC = () => {
         (store: ApplicationState) => store.stocks.dataHistory
     )
 
-    console.log([stockHistory])
-
     const FilteredHistory = stockHistory.filter(
         (stock, index) => index % 30 === 0
     )
-
-    console.log(FilteredHistory)
 
     return (
         <div className="stock-chart-container">

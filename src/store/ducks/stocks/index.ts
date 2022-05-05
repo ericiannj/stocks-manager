@@ -23,7 +23,7 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
             }
         case StocksTypes.LOAD_FAILURE:
             alert(
-                'Falha ao pesquisar ação. Verifique se a sigla está correta e se não há problemas de conexão.'
+                'Falha ao pesquisar ação. Verifique se a sigla está correta ou se não há problemas de conexão.'
             )
             return { ...state, loading: false, error: true, data: {} }
         case StocksTypes.ADD_RECENT:

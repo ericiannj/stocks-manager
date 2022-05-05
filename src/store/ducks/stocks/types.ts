@@ -1,4 +1,3 @@
-//Action types
 export enum StocksTypes {
     LOAD_REQUEST = '@stocks/LOAD_REQUEST',
     LOAD_SUCCESS = '@stocks/LOAD_SUCCESS',
@@ -9,7 +8,7 @@ export enum StocksTypes {
     DELETE_FAVORITE = '@stocks/DELETE_FAVORITE',
     GET_HISTORY = '@stocks/GET_HISTORY',
 }
-//Data types
+
 export type Stock = {
     symbol?: string
     companyName?: string
@@ -31,7 +30,6 @@ export type StockHistory = {
     numberOfTrades?: number
 }
 
-//State type
 export type StocksState = {
     readonly data: Stock
     readonly dataHistory: StockHistory[]

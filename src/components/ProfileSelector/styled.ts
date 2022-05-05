@@ -19,6 +19,7 @@ export const ProfileSelect = styled.select`
     box-sizing: border-box;
     border-radius: 120px;
     -webkit-appearance: none;
+    cursor: pointer;
 
     option {
         color: ${colors.primary};

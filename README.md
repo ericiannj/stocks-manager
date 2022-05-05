@@ -26,12 +26,31 @@ Stocks Manager is an application that helps to handle with company stocks. Users
 
 Stocks Manager is a front-end project.
 
-1. Clone the repository;
-2. "yarn" to install the front-end dependencies;
-3. Create the .env file and put the IEX token (REACT_APP_IEX_API_TOKEN={TOKEN})
-4. "yarn start" to run the code.
+1. Clone the repository
 
-Obs: The REACT_APP_IEX_API_TOKEN is obtained in the IEX website.
+```
+git clone https://github.com/ericiannj/stocks-manager.git
+```
+
+2. Install the front-end dependencies;
+
+```
+yarn
+```
+
+3. Create the .env file and put the IEX token (REACT_APP_IEX_API_TOKEN={TOKEN})
+
+```
+REACT_APP_IEX_API_TOKEN=__________________________
+```
+
+4. Run the code.
+
+```
+yarn start
+```
+
+Obs: The REACT_APP_IEX_API_TOKEN is obtained in the IEX website (https://iexcloud.io/).
 
 ## Stack and Technology
 

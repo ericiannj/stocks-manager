@@ -11,7 +11,7 @@ export const DeleteFavoritesButton = styled.button`
     border: none;
     position: absolute;
     top: 20px;
-    right: 38px;
+    right: -14px;
 `
 
 export const TrashImage = styled.img`

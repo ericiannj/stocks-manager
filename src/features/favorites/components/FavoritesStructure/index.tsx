@@ -22,8 +22,6 @@ const FavoritesStructure: React.FC = () => {
         dispatch(deleteFavorite(stock))
     }
 
-    console.log(favoritesStocks)
-
     return (
         <>
             <SectionHeader

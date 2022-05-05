@@ -23,6 +23,7 @@ export const RecentStocksContainer = styled.div`
     width: 100%;
     overflow: auto;
     overflow-y: hidden;
+    height: 110px;
 
     &::-webkit-scrollbar {
         width: 12px;
