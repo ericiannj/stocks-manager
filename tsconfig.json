@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
         "outDir": "dist",
+        "rootDir": "./src",
+        /* Experimental Options */
+        "experimentalDecorators": true,
         "target": "ES2020",
         "module": "CommonJS",
         "noImplicitAny": true,
@@ -22,6 +25,6 @@
             "@/*": ["*"]
         }
     },
-    "include": ["src"],
+    "include": ["src", "src/commitlint.config.js"],
     "exclude": ["node_modules"]
 }
