@@ -3,16 +3,3 @@
     src: local('Graphik'),
         url('../assets/fonts/GraphikRegular.otf') format('opentype');
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-input,
-button,
-textarea {
-    font: 16px Graphik;
-}
