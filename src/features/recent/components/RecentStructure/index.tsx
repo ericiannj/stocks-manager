@@ -34,7 +34,7 @@ const DashboardStructure: React.FC = () => {
             </RecentHeaderContainer>
 
             <RecentStocksContainer>
-                {recentStock.map((stock, index) => (
+                {recentStock.reverse().map((stock, index) => (
                     <StockCard
                         key={index}
                         title={stock.symbol}

@@ -33,8 +33,8 @@ const FavoritesStructure: React.FC = () => {
                     verticalAlign: 'text-top',
                 }}
             />
-            {favoritesStocks.map((stock, index) => (
-                <FavoriteStockContainer key={index}>
+            {favoritesStocks.map(stock => (
+                <FavoriteStockContainer key={stock.symbol}>
                     <StockCard
                         title={stock.symbol}
                         text={
