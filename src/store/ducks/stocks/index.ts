@@ -47,6 +47,11 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 ...state,
                 dataHistory: action.payload,
             }
+        /* case StocksTypes.CHANGE_SELECTED_STOCK:
+            return {
+                ...state,
+                data: action.payload
+            } */
         default:
             return state
     }

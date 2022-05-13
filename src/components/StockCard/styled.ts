@@ -7,7 +7,7 @@ export const StockCardContainer = styled.div`
     padding: 16px 16px;
     box-shadow: 0px 8px 20px -2px rgba(43, 37, 63, 0.1);
     border-radius: 8px;
-    margin-right: 21px;
+    cursor: pointer;
 `
 
 export const StockCardTextContainer = styled.div`

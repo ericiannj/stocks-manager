@@ -34,3 +34,10 @@ export const RecentStocksContainer = styled.div`
         border-radius: 20px;
     }
 `
+
+export const RecentStockContainer = styled.div`
+    display: inline-flex;
+    margin-right: 21px;
+    height: fit-content;
+    border-radius: 8px;
+`

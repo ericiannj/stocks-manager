@@ -4,7 +4,7 @@ import {
     InputStock,
     SearchButton,
     SearchButtonImage,
-} from '@/features/dashboard/components/inputDash/styled'
+} from '@/features/dashboard/components/InputDash/styled'
 import SearchIcon from '@/assets/icons/search-icon.png'
 import { loadRequest } from '@/store/ducks/stocks/actions'
 import { useDispatch } from 'react-redux'

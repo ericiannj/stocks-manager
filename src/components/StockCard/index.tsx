@@ -14,6 +14,7 @@ type IStockCardProps = {
     title?: string
     text?: string
     data?: string
+    onClick?: () => void
 }
 
 const StockCard: React.FC<IStockCardProps> = ({ title, text, data }) => {

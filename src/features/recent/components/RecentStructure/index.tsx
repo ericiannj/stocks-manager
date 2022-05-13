@@ -8,15 +8,20 @@ import {
     RecentHeaderContainer,
     TrashImage,
     RecentStocksContainer,
+    RecentStockContainer,
 } from './styled'
 import TrashIcon from '@/assets/icons/trash-icon.png'
-import { deleteRecent } from '@/store/ducks/stocks/actions'
+import { loadRequest, deleteRecent } from '@/store/ducks/stocks/actions'
 
 const DashboardStructure: React.FC = () => {
     const dispatch = useDispatch()
     const recentStock = useSelector(
         (store: ApplicationState) => store.stocks.recent
     )
+
+    const selectStock = (symbol: string) => {
+        dispatch(loadRequest(symbol))
+    }
 
     const deleteRecentStocks = () => {
         dispatch(deleteRecent())
@@ -25,7 +30,7 @@ const DashboardStructure: React.FC = () => {
     return (
         <>
             <RecentHeaderContainer>
-                <SectionHeader title="Empresas recentes" icon={StatsIcon} />
+                <SectionHeader title="Recent Companies" icon={StatsIcon} />
                 {recentStock.length > 0 && (
                     <DeleteRecentButton onClick={deleteRecentStocks}>
                         <TrashImage src={TrashIcon} />
@@ -35,17 +40,21 @@ const DashboardStructure: React.FC = () => {
 
             <RecentStocksContainer>
                 {recentStock.reverse().map((stock, index) => (
-                    <StockCard
+                    <RecentStockContainer
                         key={index}
-                        title={stock.symbol}
-                        text={
-                            stock.companyName !== undefined &&
-                            stock.companyName.length > 16
-                                ? stock.companyName.substring(0, 16) + '...'
-                                : stock.companyName
-                        }
-                        data={stock.changePercent?.toFixed(2) + '%'}
-                    />
+                        onClick={() => selectStock(stock.symbol!)}
+                    >
+                        <StockCard
+                            title={stock.symbol}
+                            text={
+                                stock.companyName !== undefined &&
+                                stock.companyName.length > 16
+                                    ? stock.companyName.substring(0, 16) + '...'
+                                    : stock.companyName
+                            }
+                            data={stock.changePercent?.toFixed(2) + '%'}
+                        />
+                    </RecentStockContainer>
                 ))}
             </RecentStocksContainer>
         </>

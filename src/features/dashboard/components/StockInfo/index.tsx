@@ -41,7 +41,7 @@ const StockInfo: React.FC = () => {
             {stock.symbol === undefined ? (
                 <EmptyStockContainer>
                     <EmptyStockTitle>
-                        Procure por ações de uma empresa por meio de sua sigla
+                        Search for a company's stock by its symbol
                     </EmptyStockTitle>
                     <EmptyStockImageContainer>
                         <EmptyStockImage src={EmptyIcon} />

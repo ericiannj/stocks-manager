@@ -9,7 +9,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux'
 import { ApplicationState } from '@/store'
 import TrashIcon from '@/assets/icons/trash-icon.png'
-import { deleteFavorite } from '@/store/ducks/stocks/actions'
+import { deleteFavorite, loadRequest } from '@/store/ducks/stocks/actions'
 import { Stock } from '@/store/ducks/stocks/types'
 
 const FavoritesStructure: React.FC = () => {
@@ -18,6 +18,10 @@ const FavoritesStructure: React.FC = () => {
         (store: ApplicationState) => store.stocks.favorites
     )
 
+    const selectStock = (symbol: string) => {
+        dispatch(loadRequest(symbol))
+    }
+
     const deleteFavoriteStock = (stock: Stock) => {
         dispatch(deleteFavorite(stock))
     }
@@ -25,7 +29,7 @@ const FavoritesStructure: React.FC = () => {
     return (
         <>
             <SectionHeader
-                title="Empresas favoritas"
+                title="Favorite Companies"
                 icon={FullStarIcon}
                 style={{
                     height: '16px',
@@ -33,25 +37,29 @@ const FavoritesStructure: React.FC = () => {
                     verticalAlign: 'text-top',
                 }}
             />
-            {favoritesStocks.map(stock => (
-                <FavoriteStockContainer key={stock.symbol}>
-                    <StockCard
-                        title={stock.symbol}
-                        text={
-                            stock.companyName !== undefined &&
-                            stock.companyName.length > 16
-                                ? stock.companyName.substring(0, 16) + '...'
-                                : stock.companyName
-                        }
-                        data={stock.changePercent?.toFixed(2) + '%'}
-                    />
-                    <DeleteFavoritesButton
-                        onClick={() => deleteFavoriteStock(stock)}
+            {favoritesStocks !== undefined &&
+                favoritesStocks.map(stock => (
+                    <FavoriteStockContainer
+                        key={stock.symbol}
+                        onClick={() => selectStock(stock.symbol!)}
                     >
-                        <TrashImage src={TrashIcon} />
-                    </DeleteFavoritesButton>
-                </FavoriteStockContainer>
-            ))}
+                        <StockCard
+                            title={stock.symbol}
+                            text={
+                                stock.companyName !== undefined &&
+                                stock.companyName.length > 16
+                                    ? stock.companyName.substring(0, 16) + '...'
+                                    : stock.companyName
+                            }
+                            data={stock.changePercent?.toFixed(2) + '%'}
+                        />
+                        <DeleteFavoritesButton
+                            onClick={() => deleteFavoriteStock(stock)}
+                        >
+                            <TrashImage src={TrashIcon} />
+                        </DeleteFavoritesButton>
+                    </FavoriteStockContainer>
+                ))}
         </>
     )
 }
