@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import colors from '@/styles/colors'
 
-export const InputDiv = styled.div`
+export const InputDiv = styled.form`
     height: 40px;
     width: 364px;
     border-radius: 8px;

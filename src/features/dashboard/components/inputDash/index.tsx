@@ -13,18 +13,19 @@ const InputDash: React.FC = () => {
     const [symbol, setSymbol] = useState('')
     const dispatch = useDispatch()
 
-    const searchStock = () => {
+    const searchStock = (e: any) => {
+        e.preventDefault()
         dispatch(loadRequest(symbol))
     }
 
     return (
         <>
-            <InputDiv>
+            <InputDiv onSubmit={searchStock}>
                 <InputStock
                     placeholder="Buscar empresa"
                     onChange={e => setSymbol(e.target.value)}
                 />
-                <SearchButton onClick={searchStock}>
+                <SearchButton type="submit">
                     <SearchButtonImage src={SearchIcon} />
                 </SearchButton>
             </InputDiv>
