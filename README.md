@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="./src/assets/icons/stock-icon.png" width="80">
+	<img src="./src/assets/icons/logo-icon.png" width="80">
 </p>
 
 <h1 align="center">Stocks Manager</h1>

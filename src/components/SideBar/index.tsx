@@ -7,7 +7,7 @@ import {
     SideBarLogo,
     SideBarSelectedIndicator,
 } from './styled'
-import Logo from '@/assets/icons/stock-icon.png'
+import Logo from '@/assets/icons/logo-icon.png'
 import HomeLink from '@/assets/icons/home.png'
 
 const SideBar: React.FC = () => {
