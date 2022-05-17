@@ -51,7 +51,11 @@ const FavoritesStructure: React.FC = () => {
                                     ? stock.companyName.substring(0, 16) + '...'
                                     : stock.companyName
                             }
-                            data={stock.changePercent?.toFixed(2) + '%'}
+                            data={
+                                stock.changePercent == undefined
+                                    ? 'undef'
+                                    : stock.changePercent?.toFixed(2) + '%'
+                            }
                         />
                         <DeleteFavoritesButton
                             onClick={() => deleteFavoriteStock(stock)}

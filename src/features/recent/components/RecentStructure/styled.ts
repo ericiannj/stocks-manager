@@ -26,7 +26,8 @@ export const RecentStocksContainer = styled.div`
     height: 110px;
 
     &::-webkit-scrollbar {
-        width: 12px;
+        width: 1px;
+        height: 12px;
     }
 
     &::-webkit-scrollbar-thumb {
