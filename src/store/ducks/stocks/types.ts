@@ -17,17 +17,17 @@ export type Stock = {
 }
 
 export type StockHistory = {
-    date?: string
-    minute?: string
-    label?: number
-    high?: number
-    low?: number
-    open?: number
-    close?: number
-    average?: number
-    volume?: number
-    notional?: number
-    numberOfTrades?: number
+    date: string
+    minute: string
+    label: number
+    high: number
+    low: number
+    open: number
+    close: number
+    marketAverage: number
+    volume: number
+    notional: number
+    numberOfTrades: number
 }
 
 export type StocksState = {

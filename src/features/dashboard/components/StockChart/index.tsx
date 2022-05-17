@@ -9,7 +9,7 @@ const StockChart: React.FC = () => {
         (store: ApplicationState) => store.stocks.dataHistory
     )
 
-    const FilteredHistory = stockHistory.filter(
+    const filteredHistory = stockHistory.filter(
         (stock, index) => index % 30 === 0
     )
 
@@ -18,7 +18,7 @@ const StockChart: React.FC = () => {
             <AreaChart
                 width={750}
                 height={280}
-                data={FilteredHistory}
+                data={filteredHistory}
                 margin={{
                     top: 10,
                     right: 30,
@@ -42,7 +42,7 @@ const StockChart: React.FC = () => {
                     </linearGradient>
                 </defs>
                 <XAxis dataKey={'minute'} />
-                <YAxis />
+                <YAxis type="number" domain={['dataMin', 'dataMax']} />
                 <Tooltip />
                 <Area
                     type="monotone"
