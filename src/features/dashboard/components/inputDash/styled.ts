@@ -16,6 +16,11 @@ export const InputStock = styled.input`
     border-radius: 8px;
     padding: 8px 16px;
     border: 1px solid ${colors.borderGray};
+    outline: none;
+
+    &:focus {
+        border: 1px solid ${colors.primary};
+    }
 `
 
 export const SearchButton = styled.button`
