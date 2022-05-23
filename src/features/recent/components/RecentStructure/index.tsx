@@ -32,7 +32,12 @@ const DashboardStructure: React.FC = () => {
             <RecentHeaderContainer>
                 <SectionHeader title="Recent Companies" icon={StatsIcon} />
                 {recentStock.length > 0 && (
-                    <DeleteRecentButton onClick={deleteRecentStocks}>
+                    <DeleteRecentButton
+                        aria-label="Clear search history"
+                        data-balloon-pos="up"
+                        className="tooltip-primary"
+                        onClick={deleteRecentStocks}
+                    >
                         <TrashImage src={TrashIcon} />
                     </DeleteRecentButton>
                 )}

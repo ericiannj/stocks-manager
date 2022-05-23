@@ -9,8 +9,9 @@ export const DeleteRecentButton = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: none;
+    height: 1px;
     margin-left: 40px;
-    padding-top: 6px;
+    margin-top: 28px;
 `
 
 export const TrashImage = styled.img`

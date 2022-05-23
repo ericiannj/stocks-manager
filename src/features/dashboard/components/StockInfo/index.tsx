@@ -54,7 +54,12 @@ const StockInfo: React.FC = () => {
                             stockFavorites.some(
                                 item => item.symbol === stock.symbol
                             ) && (
-                                <FavoriteButton onClick={addToFavoritesStocks}>
+                                <FavoriteButton
+                                    aria-label="Stock already favorited"
+                                    data-balloon-pos="up"
+                                    className="tooltip-primary"
+                                    onClick={addToFavoritesStocks}
+                                >
                                     <StarImage src={FullStarIcon} />
                                 </FavoriteButton>
                             )}
@@ -62,7 +67,12 @@ const StockInfo: React.FC = () => {
                             stockFavorites.every(
                                 item => item.symbol !== stock.symbol
                             ) && (
-                                <FavoriteButton onClick={addToFavoritesStocks}>
+                                <FavoriteButton
+                                    aria-label="Add to Favorites"
+                                    data-balloon-pos="up"
+                                    className="tooltip-primary"
+                                    onClick={addToFavoritesStocks}
+                                >
                                     <StarImage src={StarIcon} />
                                 </FavoriteButton>
                             )}

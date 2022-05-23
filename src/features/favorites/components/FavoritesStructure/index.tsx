@@ -58,6 +58,9 @@ const FavoritesStructure: React.FC = () => {
                             }
                         />
                         <DeleteFavoritesButton
+                            aria-label="Remove favorite"
+                            data-balloon-pos="up"
+                            className="tooltip-primary"
                             onClick={() => deleteFavoriteStock(stock)}
                         >
                             <TrashImage src={TrashIcon} />

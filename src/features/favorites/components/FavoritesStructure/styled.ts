@@ -9,7 +9,7 @@ export const DeleteFavoritesButton = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: none;
-    position: absolute;
+    position: absolute !important;
     top: 20px;
     right: -30px;
 `
