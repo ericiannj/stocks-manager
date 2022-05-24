@@ -7,13 +7,16 @@ import {
     StockCardName,
     StockCardDataContainer,
     StockCardData,
+    GraphImage,
 } from './styled'
 import StockIcon from '@/assets/icons/stock-icon.png'
+import GraphUpIcon from '@/assets/icons/graph-up-icon.png'
+import GraphDownIcon from '@/assets/icons/graph-down-icon.png'
 
 type IStockCardProps = {
     title?: string
     text?: string
-    data?: string
+    data?: number
     onClick?: () => void
 }
 
@@ -27,7 +30,12 @@ const StockCard: React.FC<IStockCardProps> = ({ title, text, data }) => {
                     <StockCardName>{text}</StockCardName>
                 </StockCardTextContainer>
                 <StockCardDataContainer>
-                    <StockCardData>{data}</StockCardData>
+                    <StockCardData data={data}>{data}%</StockCardData>
+                    {data! >= 0 ? (
+                        <GraphImage src={GraphUpIcon} />
+                    ) : (
+                        <GraphImage src={GraphDownIcon} />
+                    )}
                 </StockCardDataContainer>
             </StockCardContainer>
         </>

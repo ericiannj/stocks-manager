@@ -13,8 +13,6 @@ const StockChart: React.FC = () => {
         (stock, index) => index % 30 === 0
     )
 
-    console.log(filteredHistory)
-
     return (
         <div className="stock-chart-container">
             <AreaChart

@@ -53,15 +53,11 @@ const DashboardStructure: React.FC = () => {
                             title={stock.symbol}
                             text={
                                 stock.companyName !== undefined &&
-                                stock.companyName.length > 16
-                                    ? stock.companyName.substring(0, 16) + '...'
+                                stock.companyName.length > 12
+                                    ? stock.companyName.substring(0, 12) + '...'
                                     : stock.companyName
                             }
-                            data={
-                                stock.changePercent == undefined
-                                    ? 'undef'
-                                    : stock.changePercent?.toFixed(2) + '%'
-                            }
+                            data={Math.round(stock.changePercent! * 100) / 100}
                         />
                     </RecentStockContainer>
                 ))}

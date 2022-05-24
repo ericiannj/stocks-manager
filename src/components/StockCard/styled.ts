@@ -18,8 +18,8 @@ export const StockCardTextContainer = styled.div`
 
 export const StockCardDataContainer = styled.div`
     margin-left: 12px;
+    display: flex;
     float: right;
-    margin-top: 12px;
     margin-right: 5px;
 `
 
@@ -42,6 +42,18 @@ export const StockCardName = styled.p`
     line-height: 20px;
 `
 
-export const StockCardData = styled.p`
+type StockCardDataProps = {
+    data?: number
+}
+
+export const StockCardData = styled.p<StockCardDataProps>`
     font-size: 16px;
+    padding-top: 9px;
+    color: ${props => (props.data! >= 0 ? '#79C300' : '#D64B45')};
+`
+
+export const GraphImage = styled.img`
+    height: 36px;
+    width: 16px;
+    margin-left: 8px;
 `
