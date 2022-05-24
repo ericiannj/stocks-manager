@@ -36,6 +36,8 @@ const StockInfo: React.FC = () => {
         dispatch(addFavorite(stock))
     }
 
+    console.log(stockFavorites)
+
     return (
         <>
             {stock.symbol === undefined ? (

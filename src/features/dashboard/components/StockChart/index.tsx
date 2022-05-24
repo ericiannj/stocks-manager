@@ -13,6 +13,8 @@ const StockChart: React.FC = () => {
         (stock, index) => index % 30 === 0
     )
 
+    console.log(filteredHistory)
+
     return (
         <div className="stock-chart-container">
             <AreaChart
@@ -42,11 +44,17 @@ const StockChart: React.FC = () => {
                     </linearGradient>
                 </defs>
                 <XAxis dataKey={'minute'} />
-                <YAxis type="number" domain={['dataMin', 'dataMax']} />
+                <YAxis
+                    type="number"
+                    domain={['dataMin', 'dataMax']}
+                    tickFormatter={number => {
+                        return `$${number}`
+                    }}
+                />
                 <Tooltip />
                 <Area
                     type="monotone"
-                    dataKey="marketAverage"
+                    dataKey="marketClose"
                     stroke="#0047BB"
                     fill="url(#avarage)"
                 />
