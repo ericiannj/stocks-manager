@@ -12,6 +12,8 @@ import {
     StockDataContainer,
     FavoriteButton,
     StarImage,
+    LogoImage,
+    StockLogoContainer,
 } from './styled'
 import { useSelector } from 'react-redux'
 import { ApplicationState } from '@/store'
@@ -23,6 +25,9 @@ import { addFavorite } from '@/store/ducks/stocks/actions'
 
 const StockInfo: React.FC = () => {
     const stock = useSelector((store: ApplicationState) => store.stocks.data)
+    const stockLogo = useSelector(
+        (store: ApplicationState) => store.stocks.dataLogo
+    )
     const stockFavorites = useSelector(
         (store: ApplicationState) => store.stocks.favorites
     )
@@ -33,7 +38,7 @@ const StockInfo: React.FC = () => {
             alert('Ação já favoritada')
             return
         }
-        dispatch(addFavorite(stock))
+        dispatch(addFavorite())
     }
 
     return (
@@ -85,6 +90,9 @@ const StockInfo: React.FC = () => {
                                     : stock.companyName}
                             </StockCompanyName>
                         </StockTextContainer>
+                        <StockLogoContainer>
+                            <LogoImage src={stockLogo} />
+                        </StockLogoContainer>
                         <StockDataContainer>
                             <StockData>
                                 {stock.symbol !== undefined && '$'}{' '}

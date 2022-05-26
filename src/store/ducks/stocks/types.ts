@@ -2,6 +2,7 @@ export enum StocksTypes {
     LOAD_REQUEST = '@stocks/LOAD_REQUEST',
     LOAD_SUCCESS = '@stocks/LOAD_SUCCESS',
     LOAD_FAILURE = '@stocks/LOAD_FAILURE',
+    GET_LOGO = '@stocks/GET_LOGO',
     ADD_RECENT = '@stocks/ADD_RECENT',
     DELETE_RECENT = '@stocks/DELETE_RECENT',
     ADD_FAVORITE = '@stocks/ADD_FAVORITE',
@@ -14,6 +15,11 @@ export type Stock = {
     companyName?: string
     latestPrice?: number
     changePercent?: number
+    src?: string
+}
+
+export type StockLogo = {
+    url?: string
 }
 
 export type StockHistory = {
@@ -32,6 +38,7 @@ export type StockHistory = {
 
 export type StocksState = {
     readonly data: Stock
+    readonly dataLogo: string
     readonly dataHistory: StockHistory[]
     readonly loading: boolean
     readonly error: boolean

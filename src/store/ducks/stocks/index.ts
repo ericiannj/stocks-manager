@@ -3,6 +3,7 @@ import { Reducer } from 'redux'
 
 const INITIAL_STATE: StocksState = {
     data: {},
+    dataLogo: '',
     error: false,
     loading: false,
     recent: [],
@@ -26,14 +27,28 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 'Falha ao pesquisar ação. Verifique se a sigla está correta ou se não há problemas de conexão.'
             )
             return { ...state, loading: false, error: true, data: {} }
+        case StocksTypes.GET_LOGO:
+            return {
+                ...state,
+                dataLogo: action.payload.data.url,
+            }
         case StocksTypes.ADD_RECENT:
-            return { ...state, recent: [...state.recent, action.payload.data] }
+            return {
+                ...state,
+                recent: [
+                    ...state.recent,
+                    { ...state.data, src: state.dataLogo },
+                ],
+            }
         case StocksTypes.DELETE_RECENT:
             return { ...state, recent: [] }
         case StocksTypes.ADD_FAVORITE:
             return {
                 ...state,
-                favorites: [...state.favorites, action.payload.data],
+                favorites: [
+                    ...state.favorites,
+                    { ...state.data, src: state.dataLogo },
+                ],
             }
         case StocksTypes.DELETE_FAVORITE:
             return {

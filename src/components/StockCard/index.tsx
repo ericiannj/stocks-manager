@@ -9,22 +9,22 @@ import {
     StockCardData,
     GraphImage,
 } from './styled'
-import StockIcon from '@/assets/icons/stock-icon.png'
 import GraphUpIcon from '@/assets/icons/graph-up-icon.png'
 import GraphDownIcon from '@/assets/icons/graph-down-icon.png'
 
 type IStockCardProps = {
     title?: string
+    logo?: string
     text?: string
     data?: number
     onClick?: () => void
 }
 
-const StockCard: React.FC<IStockCardProps> = ({ title, text, data }) => {
+const StockCard: React.FC<IStockCardProps> = ({ title, logo, text, data }) => {
     return (
         <>
             <StockCardContainer>
-                <StockCardImage src={StockIcon} />
+                <StockCardImage src={logo} />
                 <StockCardTextContainer>
                     <StockCardSymbol>{title}</StockCardSymbol>
                     <StockCardName>{text}</StockCardName>

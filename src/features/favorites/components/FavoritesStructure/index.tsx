@@ -45,6 +45,7 @@ const FavoritesStructure: React.FC = () => {
                     >
                         <StockCard
                             title={stock.symbol}
+                            logo={stock.src}
                             text={
                                 stock.companyName !== undefined &&
                                 stock.companyName.length > 16

@@ -28,6 +28,7 @@ export const StockCardImage = styled.img`
     width: 36px;
     border-radius: 100%;
     vertical-align: sub;
+    object-fit: contain;
 `
 
 export const StockCardSymbol = styled.h1`

@@ -23,6 +23,17 @@ export const StockInfoContainer = styled.div`
     width: 100%;
 `
 
+export const StockLogoContainer = styled.div`
+    float: right;
+    margin-right: 140px;
+`
+
+export const LogoImage = styled.img`
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+`
+
 export const StockTextContainer = styled.div`
     display: inline-block;
     margin-left: 12px;
@@ -41,10 +52,9 @@ export const StockCompanyName = styled.p`
 `
 
 export const StockDataContainer = styled.div`
-    margin-left: 12px;
     float: right;
-    margin-top: 12px;
-    margin-right: 5px;
+    margin-right: -156px;
+    margin-top: 8px;
 `
 
 export const StockData = styled.p`

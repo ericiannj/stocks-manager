@@ -5,13 +5,29 @@ import {
     loadFailure,
     loadRequest,
     addRecent,
+    getLogo,
     getStockHistory,
 } from './actions'
-import { Stock, StockHistory, StocksTypes } from './types'
+import { Stock, StockHistory, StockLogo, StocksTypes } from './types'
 import { AxiosResponse } from 'axios'
 const apiKey = process.env.REACT_APP_IEX_API_TOKEN
 
 type loadParams = ReturnType<typeof loadRequest>
+
+export function* getStockLogo({
+    payload,
+}: loadParams): Generator<StrictEffect, any, AxiosResponse<StockLogo>> {
+    try {
+        const response = yield call(
+            api.get,
+            `/stock/${payload}/logo?token=${apiKey}`
+        )
+
+        yield put(getLogo(response.data))
+    } catch (err) {
+        yield put(loadFailure())
+    }
+}
 
 export function* load({
     payload,
@@ -45,6 +61,7 @@ export function* getHistory({
 }
 
 export default all([
+    takeLatest(StocksTypes.LOAD_REQUEST, getStockLogo),
     takeLatest(StocksTypes.LOAD_REQUEST, load),
     takeLatest(StocksTypes.LOAD_REQUEST, getHistory),
 ])
