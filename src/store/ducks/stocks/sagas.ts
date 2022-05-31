@@ -37,7 +37,6 @@ export function* load({
             api.get,
             `/stock/${payload}/quote?token=${apiKey}`
         )
-
         yield put(loadSuccess(response.data))
         yield put(addRecent(response.data))
     } catch (err) {

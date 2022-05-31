@@ -24,9 +24,11 @@ import { useDispatch } from 'react-redux'
 import { addFavorite } from '@/store/ducks/stocks/actions'
 
 const StockInfo: React.FC = () => {
-    const stock = useSelector((store: ApplicationState) => store.stocks.data)
+    const stock = useSelector(
+        (store: ApplicationState) => store.stocks.stockData
+    )
     const stockLogo = useSelector(
-        (store: ApplicationState) => store.stocks.dataLogo
+        (store: ApplicationState) => store.stocks.stockLogo
     )
     const stockFavorites = useSelector(
         (store: ApplicationState) => store.stocks.favorites

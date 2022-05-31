@@ -37,9 +37,9 @@ export type StockHistory = {
 }
 
 export type StocksState = {
-    readonly data: Stock
-    readonly dataLogo: string
-    readonly dataHistory: StockHistory[]
+    readonly stockData: Stock
+    readonly stockLogo: string
+    readonly stockHistory: StockHistory[]
     readonly loading: boolean
     readonly error: boolean
     readonly recent: Stock[]

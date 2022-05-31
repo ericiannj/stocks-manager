@@ -6,7 +6,7 @@ import './style.css'
 
 const StockChart: React.FC = () => {
     const stockHistory = useSelector(
-        (store: ApplicationState) => store.stocks.dataHistory
+        (store: ApplicationState) => store.stocks.stockHistory
     )
 
     const filteredHistory = stockHistory.filter(

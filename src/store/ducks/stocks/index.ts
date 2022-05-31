@@ -2,13 +2,13 @@ import { StocksState, StocksTypes } from './types'
 import { Reducer } from 'redux'
 
 const INITIAL_STATE: StocksState = {
-    data: {},
-    dataLogo: '',
+    stockData: {},
+    stockLogo: '',
     error: false,
     loading: false,
     recent: [],
     favorites: [],
-    dataHistory: [],
+    stockHistory: [],
 }
 
 const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
@@ -20,7 +20,7 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 ...state,
                 loading: false,
                 error: false,
-                data: action.payload.data,
+                stockData: action.payload.data,
             }
         case StocksTypes.LOAD_FAILURE:
             alert(
@@ -30,14 +30,14 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
         case StocksTypes.GET_LOGO:
             return {
                 ...state,
-                dataLogo: action.payload.data.url,
+                stockLogo: action.payload.data.url,
             }
         case StocksTypes.ADD_RECENT:
             return {
                 ...state,
                 recent: [
                     ...state.recent,
-                    { ...state.data, src: state.dataLogo },
+                    { ...state.stockData, src: state.stockLogo },
                 ],
             }
         case StocksTypes.DELETE_RECENT:
@@ -47,7 +47,7 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 ...state,
                 favorites: [
                     ...state.favorites,
-                    { ...state.data, src: state.dataLogo },
+                    { ...state.stockData, src: state.stockLogo },
                 ],
             }
         case StocksTypes.DELETE_FAVORITE:
@@ -60,7 +60,7 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
         case StocksTypes.GET_HISTORY:
             return {
                 ...state,
-                dataHistory: action.payload,
+                stockHistory: action.payload,
             }
         default:
             return state
