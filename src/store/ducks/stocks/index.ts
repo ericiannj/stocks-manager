@@ -24,9 +24,9 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
             }
         case StocksTypes.LOAD_FAILURE:
             alert(
-                'Falha ao pesquisar ação. Verifique se a sigla está correta ou se não há problemas de conexão.'
+                'Failed to search stock. Check that the acronym is correct or that there are no connection problems.'
             )
-            return { ...state, loading: false, error: true, data: {} }
+            return { ...state, loading: false, error: true, stockData: {} }
         case StocksTypes.GET_LOGO:
             return {
                 ...state,

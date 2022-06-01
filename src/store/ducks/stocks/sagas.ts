@@ -29,7 +29,7 @@ export function* getStockLogo({
     }
 }
 
-export function* load({
+export function* loadStock({
     payload,
 }: loadParams): Generator<StrictEffect, any, AxiosResponse<Stock>> {
     try {
@@ -61,6 +61,6 @@ export function* getHistory({
 
 export default all([
     takeLatest(StocksTypes.LOAD_REQUEST, getStockLogo),
-    takeLatest(StocksTypes.LOAD_REQUEST, load),
+    takeLatest(StocksTypes.LOAD_REQUEST, loadStock),
     takeLatest(StocksTypes.LOAD_REQUEST, getHistory),
 ])
