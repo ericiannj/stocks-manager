@@ -5,17 +5,15 @@ import {
     ProfileContainer,
 } from '@/pages/styled'
 import { SideBar, ProfileSelector } from '@/components'
-import { DashboardStructure } from '@/features/dashboard/components'
-import { RecentStructure } from '@/features/recent/components'
 import { FavoritesStructure } from '@/features/favorites/components'
+import NewsStructure from '@/features/news/components/NewsStructure'
 
-const Home: React.FC = () => {
+const News: React.FC = () => {
     return (
         <GlobalContainer>
             <SideBar />
             <DashboardContainer>
-                <DashboardStructure />
-                <RecentStructure />
+                <NewsStructure />
             </DashboardContainer>
             <ProfileContainer>
                 <ProfileSelector />
@@ -25,4 +23,4 @@ const Home: React.FC = () => {
     )
 }
 
-export default Home
+export default News

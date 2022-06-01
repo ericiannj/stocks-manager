@@ -7,8 +7,8 @@ const colors: { [key: string]: string } = {
     gray01: '#F5F8FA',
     gray02: '#657786',
     gray03: '#14171A',
-
     borderGray: '#E1E0E7',
+    blueNews: '#0db8de',
 }
 
 export default colors

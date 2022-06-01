@@ -22,7 +22,7 @@ const InputDash: React.FC = () => {
         <>
             <InputDiv onSubmit={searchStock}>
                 <InputStock
-                    placeholder="Buscar empresa"
+                    placeholder="Search for Company"
                     onChange={e => setSymbol(e.target.value)}
                 />
                 <SearchButton type="submit">

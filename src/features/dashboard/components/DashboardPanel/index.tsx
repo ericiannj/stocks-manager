@@ -1,7 +1,7 @@
 import React from 'react'
 import { ApplicationState } from '@/store'
 import { useSelector } from 'react-redux'
-import { StockInfo, StockChart } from '../index'
+import { StockInfo, StockChart } from '../../components'
 import { DashboardPanelContainer } from './styled'
 
 const DashboardPanel: React.FC = () => {

@@ -30,6 +30,7 @@ export const SideBarLinkImage = styled.img`
     display: block;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 40px;
 `
 
 export const SideBarSelectedIndicator = styled.div`
