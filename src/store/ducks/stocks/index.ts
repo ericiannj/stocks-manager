@@ -23,10 +23,14 @@ const reducer: Reducer<StocksState> = (state = INITIAL_STATE, action) => {
                 stockData: action.payload.data,
             }
         case StocksTypes.LOAD_FAILURE:
-            alert(
-                'Failed to search stock. Check that the acronym is correct or that there are no connection problems.'
-            )
-            return { ...state, loading: false, error: true, stockData: {} }
+            console.log('Failed to search stock.')
+            return {
+                ...state,
+                loading: false,
+                error: true,
+                stockLog: '',
+                stockData: {},
+            }
         case StocksTypes.GET_LOGO:
             return {
                 ...state,

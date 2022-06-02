@@ -8,7 +8,7 @@ const NewsPanel: React.FC = () => {
     const newsLogo = useSelector(
         (store: ApplicationState) => store.news.newsLogo
     )
-    console.log(newsLogo)
+
     return (
         <>
             <NewsPanelContainer>

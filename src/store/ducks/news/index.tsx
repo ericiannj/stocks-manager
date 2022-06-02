@@ -25,10 +25,16 @@ const reducer: Reducer<NewsState> = (state = INITIAL_STATE, action) => {
                 newsLogo: action.payload.data.url,
             }
         case NewsTypes.LOAD_FAILURE:
-            alert(
+            console.log(
                 'Failed to search stock. Check that the acronym is correct or that there are no connection problems.'
             )
-            return { ...state, loading: false, error: true, newsData: [] }
+            return {
+                ...state,
+                loading: false,
+                error: true,
+                newsLogo: '',
+                newsData: [],
+            }
         default:
             return state
     }

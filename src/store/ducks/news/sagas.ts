@@ -32,7 +32,7 @@ export function* getLogo({
 
         yield put(getNewsLogo(response.data))
     } catch (err) {
-        yield put(loadFailure())
+        console.log('Failed to search stock.')
     }
 }
 

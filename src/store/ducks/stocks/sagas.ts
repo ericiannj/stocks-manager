@@ -40,7 +40,7 @@ export function* loadStock({
         yield put(loadSuccess(response.data))
         yield put(addRecent(response.data))
     } catch (err) {
-        yield put(loadFailure())
+        console.log('Failed to search stock.')
     }
 }
 
@@ -55,7 +55,7 @@ export function* getHistory({
 
         yield put(getStockHistory(response.data))
     } catch (err) {
-        yield put(loadFailure())
+        console.log('Failed to search stock.')
     }
 }
 

@@ -22,6 +22,8 @@ import FullStarIcon from '@/assets/icons/star-full-icon.png'
 import EmptyIcon from '@/assets/icons/empty-icon.png'
 import { useDispatch } from 'react-redux'
 import { addFavorite } from '@/store/ducks/stocks/actions'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const StockInfo: React.FC = () => {
     const stock = useSelector(
@@ -37,7 +39,10 @@ const StockInfo: React.FC = () => {
 
     const addToFavoritesStocks = () => {
         if (stockFavorites.some(item => item.symbol === stock.symbol)) {
-            alert('Ação já favoritada')
+            console.log('wdncwkon')
+            toast.warn('Stock already favorited', {
+                position: toast.POSITION.TOP_CENTER,
+            })
             return
         }
         dispatch(addFavorite())
@@ -100,6 +105,7 @@ const StockInfo: React.FC = () => {
                                 {stock.symbol !== undefined && '$'}{' '}
                                 {stock.latestPrice?.toFixed(2)}
                             </StockData>
+                            <ToastContainer />
                         </StockDataContainer>
                     </StockInfoContainer>
                 </>

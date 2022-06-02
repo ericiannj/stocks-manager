@@ -14,8 +14,6 @@ import moment from 'moment'
 const StockInfo: React.FC = () => {
     const news = useSelector((store: ApplicationState) => store.news.newsData)
 
-    console.log(news)
-
     return (
         <>
             {news.length === 0 ? (
@@ -30,6 +28,7 @@ const StockInfo: React.FC = () => {
             ) : (
                 news.map(info => (
                     <NewsCard
+                        key={info.url}
                         title={info.headline}
                         source={info.source}
                         datetime={moment(info.datetime).format('MM/DD/YY')}
