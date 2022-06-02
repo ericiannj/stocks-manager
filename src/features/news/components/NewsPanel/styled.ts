@@ -13,3 +13,16 @@ export const NewsPanelContainer = styled.div`
     padding-bottom: 20px;
     height: 80vh;
 `
+
+export const NewsImageContainer = styled.div`
+    text-align: center;
+    margin-bottom: 15px;
+`
+
+export const NewsImage = styled.img`
+    height: 32px;
+    width: 32px;
+    margin-left: auto;
+    border-radius: 20px;
+    object-fit: contain;
+`

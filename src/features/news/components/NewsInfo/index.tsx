@@ -8,6 +8,8 @@ import {
 } from './styled'
 import { useSelector } from 'react-redux'
 import { ApplicationState } from '@/store'
+import NewsCard from '../NewsCard'
+import moment from 'moment'
 
 const StockInfo: React.FC = () => {
     const news = useSelector((store: ApplicationState) => store.news.newsData)
@@ -26,7 +28,19 @@ const StockInfo: React.FC = () => {
                     </EmptyNewsImageContainer>
                 </EmptyNewsContainer>
             ) : (
-                <h1>Olá!</h1>
+                news.map(info => (
+                    <NewsCard
+                        title={info.headline}
+                        source={info.source}
+                        datetime={moment(info.datetime).format('MM/DD/YY')}
+                        text={
+                            info.summary.length > 450
+                                ? info.summary.substring(0, 450) + '...'
+                                : info.summary
+                        }
+                        image={info.image}
+                    />
+                ))
             )}
         </>
     )

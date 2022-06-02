@@ -3,6 +3,7 @@ import { Reducer } from 'redux'
 
 const INITIAL_STATE: NewsState = {
     newsData: [],
+    newsLogo: '',
     error: false,
     loading: false,
 }
@@ -17,6 +18,11 @@ const reducer: Reducer<NewsState> = (state = INITIAL_STATE, action) => {
                 loading: false,
                 error: false,
                 newsData: action.payload.data,
+            }
+        case NewsTypes.GET_NEWS_LOGO:
+            return {
+                ...state,
+                newsLogo: action.payload.data.url,
             }
         case NewsTypes.LOAD_FAILURE:
             alert(
