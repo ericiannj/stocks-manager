@@ -8,8 +8,10 @@ import {
 } from './styled'
 import { useSelector } from 'react-redux'
 import { ApplicationState } from '@/store'
-import NewsCard from '../NewsCard'
-import moment from 'moment'
+import PaginatedList from '../PaginatedList'
+/* import NewsCard from '../NewsCard'
+import moment from 'moment' */
+/* import PaginatedList from '../PaginatedList' */
 
 const StockInfo: React.FC = () => {
     const news = useSelector((store: ApplicationState) => store.news.newsData)
@@ -26,7 +28,7 @@ const StockInfo: React.FC = () => {
                     </EmptyNewsImageContainer>
                 </EmptyNewsContainer>
             ) : (
-                news.map(info => (
+                /* news.map(info => (
                     <NewsCard
                         key={info.url}
                         title={info.headline}
@@ -39,8 +41,12 @@ const StockInfo: React.FC = () => {
                         }
                         image={info.image}
                     />
-                ))
+
+                )) */
+                <PaginatedList />
             )}
+            {/* <h1>Olá</h1>
+            <PaginatedList /> */}
         </>
     )
 }

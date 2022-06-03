@@ -30,6 +30,7 @@ export const SearchButton = styled.button`
     cursor: pointer;
     background-color: ${colors.primary};
     border: none;
+    outline: none;
     position: absolute;
     right: 0;
 `

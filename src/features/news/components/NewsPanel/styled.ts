@@ -7,11 +7,22 @@ export const NewsPanelContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     background-color: ${colors.white};
+    overflow: scroll;
+    overflow-x: hidden;
     border-radius: 8px;
     margin-bottom: 42px;
-    padding: 25px 20px;
+    padding: 25px 10px;
     padding-bottom: 20px;
     height: 80vh;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: ${colors.blueNews};
+        border-radius: 20px;
+    }
 `
 
 export const NewsImageContainer = styled.div`
