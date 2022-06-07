@@ -61,5 +61,5 @@ Obs: The REACT_APP_IEX_API_TOKEN is obtained in the IEX website (https://iexclou
 
 ## Application Photos
 
-<img src="@/assets/images/stock-manager01.jpeg">
-<img src="@/assets/images/stock-manager02.jpeg">
+<img src="@/assets/images/sm01.jpg">
+<img src="@/assets/images/sm02.jpg">
