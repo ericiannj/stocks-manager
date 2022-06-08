@@ -13,7 +13,7 @@ export function* loadNews({
     try {
         const response = yield call(
             api.get,
-            `/stock/${payload}/news/last/25?token=${apiKey}`
+            `/stock/${payload}/news/last/10?token=${apiKey}`
         )
         yield put(loadSuccess(response.data))
     } catch (err) {
