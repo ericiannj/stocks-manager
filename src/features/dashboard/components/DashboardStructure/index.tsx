@@ -1,6 +1,7 @@
 import React from 'react'
 import { PageHeader } from '@/components'
-import { InputDash, DashboardPanel } from '../../components'
+import InputDash from '../inputDash'
+import DashboardPanel from '../DashboardPanel'
 import DashIcon from '@/assets/icons/dash-icon.png'
 import { useSelector } from 'react-redux'
 import { ApplicationState } from '@/store'

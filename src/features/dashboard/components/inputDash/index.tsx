@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
-import {
-    InputDiv,
-    InputStock,
-    SearchButton,
-    SearchButtonImage,
-} from '@/features/dashboard/components/InputDash/styled'
+import { InputDiv, InputStock, SearchButton, SearchButtonImage } from './styled'
 import SearchIcon from '@/assets/icons/search-icon.png'
 import { loadRequest } from '@/store/ducks/stocks/actions'
 import { useDispatch } from 'react-redux'
@@ -13,14 +8,14 @@ const InputDash: React.FC = () => {
     const [symbol, setSymbol] = useState('')
     const dispatch = useDispatch()
 
-    const searchStock = (e: any) => {
+    const searchStock = (e: React.MouseEvent) => {
         e.preventDefault()
         dispatch(loadRequest(symbol))
     }
 
     return (
         <>
-            <InputDiv onSubmit={searchStock}>
+            <InputDiv onSubmit={() => searchStock}>
                 <InputStock
                     placeholder="Search for Company"
                     onChange={e => setSymbol(e.target.value)}
