@@ -8,14 +8,14 @@ const InputNews: React.FC = () => {
     const [symbol, setSymbol] = useState('')
     const dispatch = useDispatch()
 
-    const searchNews = (e: any) => {
+    const searchNews = (e: React.FormEvent) => {
         e.preventDefault()
         dispatch(loadRequest(symbol))
     }
 
     return (
         <>
-            <InputDiv onSubmit={searchNews}>
+            <InputDiv onSubmit={e => searchNews(e)}>
                 <InputStock
                     placeholder="Search for News"
                     onChange={e => setSymbol(e.target.value)}
